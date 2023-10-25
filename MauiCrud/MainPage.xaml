@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiCrud.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            VerticalOptions="Center">
+
+            <Image
+                HeightRequest="200"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="Meu 1ª CRUD!"
+                Source="crud.png" />
+            <Button
+                x:Name="CounterBtn"
+                HorizontalOptions="Center"
+                Text="Criar Banco de Dados" />
+
+            <VerticalStackLayout x:Name="OperacoesVsl">
+                <Entry
+                    x:Name="IdEntry"
+                    Keyboard="Numeric"
+                    Placeholder="Informe o ID" />
+
+                <Entry x:Name="ValorEntry" Placeholder="Informe o endereço do Site" />
+
+                <HorizontalStackLayout Padding="0,10,0,0" HorizontalOptions="Center">
+
+                    <Button x:Name="InserirBtn" Text="Inserir" />
+                    <Button x:Name="AlterarBtn" Text="Alterar" />
+                    <Button x:Name="ExcluirBtn" Text="Excluir" />
+                    <Button x:Name="LocalizarBtn" Text="Localizar" />
+                    <Button x:Name="ListarBtn" Text="Listar" />
+
+
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
