@@ -16,11 +16,12 @@
                 SemanticProperties.Description="Meu 1ª CRUD!"
                 Source="crud.png" />
             <Button
-                x:Name="CounterBtn"
+                x:Name="CriarBancoDadosBtn"
+                Clicked="CriarBancoDadosBtn_Clicked"
                 HorizontalOptions="Center"
                 Text="Criar Banco de Dados" />
 
-            <VerticalStackLayout x:Name="OperacoesVsl">
+            <VerticalStackLayout x:Name="OperacoesVsl" IsVisible="false">
                 <Entry
                     x:Name="IdEntry"
                     Keyboard="Numeric"
@@ -30,17 +31,46 @@
 
                 <HorizontalStackLayout Padding="0,10,0,0" HorizontalOptions="Center">
 
-                    <Button x:Name="InserirBtn" Text="Inserir" />
-                    <Button x:Name="AlterarBtn" Text="Alterar" />
-                    <Button x:Name="ExcluirBtn" Text="Excluir" />
-                    <Button x:Name="LocalizarBtn" Text="Localizar" />
-                    <Button x:Name="ListarBtn" Text="Listar" />
+                    <Button
+                        x:Name="InserirBtn"
+                        Clicked="InserirBtn_Clicked"
+                        Text="Inserir" />
+                    <Button
+                        x:Name="AlterarBtn"
+                        Clicked="AlterarBtn_Clicked"
+                        Text="Alterar" />
+                    <Button
+                        x:Name="ExcluirBtn"
+                        Clicked="ExcluirBtn_Clicked_1"
+                        Text="Excluir" />
+                    <Button
+                        x:Name="LocalizarBtn"
+                        Clicked="LocalizarBtn_Clicked"
+                        Text="Localizar" />
+                    <Button
+                        x:Name="ListarBtn"
+                        Clicked="ListarBtn_Clicked"
+                        Text="Listar" />
 
 
                 </HorizontalStackLayout>
+                <CollectionView x:Name="ListaCv">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Id}" />
+                                <Label Grid.Column="1" Text="{Binding Endereco}" />
+
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
             </VerticalStackLayout>
-
 
         </VerticalStackLayout>
     </ScrollView>
